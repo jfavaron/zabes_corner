@@ -113,17 +113,9 @@
 		function createBookItems(books)
 		{
 			//for each entry in our JSON
-				console.log(books);
-  				var name = books[0].book_name;
-  				var author = books[0].author;
-  				var isbn = books[0].isbn;
-  				var image = books[0].image;
-  				
-  				console.log(name);
-				console.log(author);
-				console.log(isbn);
-				console.log(image);
-			
+				books.forEach(function(book) {
+					console.log(book)
+				});
 			//build html
 			//put title in H4
 			// put Author in H5
