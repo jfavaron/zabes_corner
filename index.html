@@ -40,7 +40,7 @@
 					<div class="title text-center col-sm-12">
 						<h2>Zabe's Corner</h2>
 					</div>
-					<div class="portfolio-gallery">
+					<div class="portfolio-gallery" id="library">
 						<div class="col-sm-3">
 							<div class="portfolio-gallery-item text-center">
 								<h4> The Pigeon Needs A Bath</h1>
@@ -112,9 +112,18 @@
 
 		function createBookItems(books)
 		{
+			var library = document.getElementById("library");
 			//for each entry in our JSON
 				books.forEach(function(book) {
-					console.log(book)
+					var currentBook = document.createElement("div").setAttribute("id", "book" + index).setAttribute("class", "col-sm-3");
+					var galleryItem = document.createElement("div").setAttribute("class", "portfolio-gallery-item text-center");
+
+					currentBook.appendChild(galleryItem);
+
+					var book_name = document.createElement("h4").appendChild(document.createTextNode(book.book_name));
+
+
+					// console.log(book)
 				});
 			//build html
 			//put title in H4
