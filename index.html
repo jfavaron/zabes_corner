@@ -5,11 +5,13 @@
 		<link rel="shortcut icon" href="https://s3-us-west-2.amazonaws.com/zabes-corner/favicon.ico" type="image/x-icon">
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 		<style type="text/css">
 		</style>
 	</head>
@@ -38,114 +40,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="title text-center col-sm-12">
-						<h2>Zabe's Corner</h2>
+						<h1>Zabe's Corner</h1>
 					</div>
 					<div class="portfolio-gallery" id="library">
-						<div class="col-sm-3">
-							<div class="portfolio-gallery-item text-center">
-								<h4> The Pigeon Needs A Bath</h1>
-								<h5> Mo Willems </h2>
-								<h6> ISBN 978-1-338-17446-5 </h3>
-								<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/zabes-corner/assets/pigeon_needs_a_bath.jpg" alt="logo">
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="portfolio-gallery-item text-center">
-								<h4> The Pigeon Needs A Bath</h1>
-								<h5> Mo Willems </h2>
-								<h6> ISBN 978-1-338-17446-5 </h3>
-								<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/zabes-corner/assets/pigeon_needs_a_bath.jpg" alt="logo">
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="portfolio-gallery-item text-center">
-								<h4> The Pigeon Needs A Bath</h1>
-								<h5> Mo Willems </h2>
-								<h6> ISBN 978-1-338-17446-5 </h3>
-								<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/zabes-corner/assets/pigeon_needs_a_bath.jpg" alt="logo">
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="portfolio-gallery-item text-center">
-								<h4> The Pigeon Needs A Bath</h1>
-								<h5> Mo Willems </h2>
-								<h6> ISBN 978-1-338-17446-5 </h3>
-								<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/zabes-corner/assets/pigeon_needs_a_bath.jpg" alt="logo">
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="portfolio-gallery-item text-center">
-								<h4> The Pigeon Needs A Bath</h1>
-								<h5> Mo Willems </h2>
-								<h6> ISBN 978-1-338-17446-5 </h3>
-								<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/zabes-corner/assets/pigeon_needs_a_bath.jpg" alt="logo">
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="portfolio-gallery-item text-center">
-								<h4> The Pigeon Needs A Bath</h1>
-								<h5> Mo Willems </h2>
-								<h6> ISBN 978-1-338-17446-5 </h3>
-								<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/zabes-corner/assets/pigeon_needs_a_bath.jpg" alt="logo">
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		
-		<div background-color="green"></div>
-		<div id="books"> </div>
-		<script>
-		function createCORSRequest(method, url) {
-			var xhr = new XMLHttpRequest();
-			if ("withCredentials" in xhr) {
-			xhr.open(method, url, true);
-			} else if (typeof XDomainRequest != "undefined") {
-				xhr = new XDomainRequest();
-				xhr.open(method, url);
-			} else {
-				xhr = null;
-			}
-			return xhr;
-		}
-
-		function createBookItems(books)
-		{
-			var library = document.getElementById("library");
-			//for each entry in our JSON
-				books.forEach(function(book) {
-					var currentBook = document.createElement("div").setAttribute("id", "book" + index).setAttribute("class", "col-sm-3");
-					var galleryItem = document.createElement("div").setAttribute("class", "portfolio-gallery-item text-center");
-
-					currentBook.appendChild(galleryItem);
-
-					var book_name = document.createElement("h4").appendChild(document.createTextNode(book.book_name));
-
-
-					// console.log(book)
-				});
-			//build html
-			//put title in H4
-			// put Author in H5
-			//put ISBN in H6
-			//add img with class responsive and src = img link
-
-		}
-
-		var url = "https://217syr9910.execute-api.us-west-2.amazonaws.com/prod/books";
-		var xhr = createCORSRequest('GET', url);
-		xhr.onerror = function() {
-		console.log('There was an error!');
-		};
-		xhr.onload = function() {
-		var responseText = xhr.responseText;
-			// console.log(responseText);
-			var books = JSON.parse(responseText);
-			createBookItems(books['books']);
-		};
-		xhr.send();
-
-		</script>
 	</body>
 </html>
